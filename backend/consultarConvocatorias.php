@@ -26,7 +26,7 @@ $salida.='
                     <p>'.$row['DESCRIPCION'].'</p>
             </div>
 
-         <a href="#">revisar documento adjunto</a>
+         <a target="_blank" href="../archivos/'.$row['TITULO_DOCUMENTO'].'.pdf">revisar documento adjunto</a>
     </div>';
 }
 

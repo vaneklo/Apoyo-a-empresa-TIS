@@ -17,31 +17,36 @@
         </nav>
     </header>
     <div class="div-formulario">
-        <form id="formulario">
-         <h2>ingrese el titulo del documento</h2>
-         <input name="titulo" type="text" placeholder="titulo">
-      
-         <h2>ingrese el semestre-año</h2>
-         <input name="semestre" type="text" placeholder="semestre-año">
-      
-         <h2>ingrese la descripcion del documento</h2>
-         <textarea name="descripcion" cols="30" row="10"></textarea>
-      
-         <h2>seleccione la fecha de incio</h2>
-          <input name="fechaInicio" type="date">
-       
-         <h2>seleccione la fecha limite de respuestas para la convocatoria</h2>
-          <input name="fechaFin" type="date">
-      
-          <h2>adjuente el documento</h2>
-          <input name="pdf" type="file">
-      
-          <hr>
+      <form id="formulario">
+        <h2>ingrese el titulo del documento</h2>
+        <input name="titulo" type="text" placeholder="titulo">
 
-          <button name="botonFormulario" type="submit"}>publicar convocatoria</button>
-        </form>
-       <br><br><br>
-      </div>
+        <h2>seleccione el semestre</h2>
+        <input type="checkbox" name="semestre1" id="opcion1" onclick="mensaje(1)">
+        <span id="1erSemestre"></span>
+        <br><br>
+        <input type="checkbox" name="semestre2" id="opcion2" onclick="mensaje(2)">
+        <span id="2doSemestre"></span>
+ 
+        <h2>ingrese la descripcion del documento</h2>
+       <textarea name="descripcion" cols="30" rows="10"></textarea>
+ 
+       <h2>ingrese la fecha de inicio</h2>
+      <input type="date" name="fechaInicio">
+
+      <h2>ingrese la fecha limite</h2>
+      <input type="date" name="fechaFin">
+
+      <h2>adjunte el documento de la convocatoria(pdf)</h2>
+     <input type="file" name="file" >
+     <hr>
+
+      <button type="submit" name="botonFormulario">publicar convocatoria</button>
+      </form>
+<br><br><br>
+    </div>
+    
 <script src="../scripts/publicarConvocatorias.js"></script>
+
 </body>
 </html>
