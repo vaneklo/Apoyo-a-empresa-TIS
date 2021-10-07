@@ -1,0 +1,72 @@
+.div-formulario {
+    display: flex;
+    justify-content: center;
+}
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+    padding: 30px;
+    height: 1000px;
+    /* background-color: rgba(65, 105, 225, 0.445); */
+    border-radius: 20px;
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+}
+.input-titulo {
+    height: 30px;
+    width: 90%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.input-semestre {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+}
+.input-semestre input {
+    margin-left: 20px;
+}
+.input-semestre span {
+    margin-left: 5px;
+}
+.input-description {
+    width: 90%;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.input-date-inicio{
+    width: 150px;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+.input-date-fin {
+    width: 150px;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+.formulario button {
+    height: 40px;
+    width: 200px;
+    justify-self: center;
+    align-self: center;
+    border-radius: 40px;
+    border: none;
+}
+.formulario button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}

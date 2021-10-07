@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style-header.css">
+    <link rel="stylesheet" href="../styles/style-form.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
     <title>publicar convocatoria</title>
 </head>
 <body>
@@ -11,37 +17,39 @@
       <nav class="navBar">
         <h1>CLASS TIS</h1>
            <ul>
-            <a class="itemNav" href="./formularioConvocatorias.html"> agregar convocatorias</a>
-            <a class="itemNav" href="./listaConvocatorias.html"> revisar convocatorias</a>
+            <a class="itemNav" href="./formularioConvocatorias.html"> Agregar convocatorias</a>
+            <a class="itemNav" href="./listaConvocatorias.html"> Revisar convocatorias</a>
            </ul>
         </nav>
     </header>
     <div class="div-formulario">
-      <form id="formulario">
-        <h2>ingrese el titulo del documento</h2>
-        <input name="titulo" type="text" placeholder="titulo">
+      <form id="formulario" class="formulario">
+        <h2>Ingrese el titulo del documento</h2>
+        <input class="input-titulo" name="titulo" type="text" placeholder="Intoduzca el título">
 
-        <h2>seleccione el semestre</h2>
-        <input type="checkbox" name="semestre1" id="opcion1" onclick="mensaje(1)">
-        <span id="1erSemestre"></span>
-        <br><br>
-        <input type="checkbox" name="semestre2" id="opcion2" onclick="mensaje(2)">
-        <span id="2doSemestre"></span>
+        <h2>Seleccione el semestre</h2>
+        <div class="input-semestre">
+          <input type="checkbox" name="semestre1" id="opcion1" onclick="mensaje(1)">
+          <span id="1erSemestre"></span>
+          <!-- <br><br>S -->
+          <input type="checkbox" name="semestre2" id="opcion2" onclick="mensaje(2)">
+          <span id="2doSemestre"></span>
+        </div>
  
-        <h2>ingrese la descripcion del documento</h2>
-       <textarea name="descripcion" cols="30" rows="10"></textarea>
+        <h2>Ingrese la descripcion del documento</h2>
+        <textarea class="input-description" name="descripcion" cols="30" rows="10"></textarea>
  
-       <h2>ingrese la fecha de inicio</h2>
-      <input type="date" name="fechaInicio">
+        <h2>Ingrese la fecha de inicio</h2>
+        <input class="input-date-inicio" type="date" name="fechaInicio">
 
-      <h2>ingrese la fecha limite</h2>
-      <input type="date" name="fechaFin">
+        <h2>Ingrese la fecha limite</h2>
+        <input class="input-date-fin" type="date" name="fechaFin">
 
-      <h2>adjunte el documento de la convocatoria(pdf)</h2>
-     <input type="file" name="file" >
-     <hr>
+        <h2>Adjunte el documento de la convocatoria(pdf)</h2>
+        <input class="input-file" type="file" name="file" >
+        <hr>
 
-      <button type="submit" name="botonFormulario">publicar convocatoria</button>
+        <button type="submit" name="botonFormulario">Publicar convocatoria</button>
       </form>
 <br><br><br>
     </div>
