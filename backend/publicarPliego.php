@@ -1,8 +1,7 @@
 <?php
 include("conexionBD.php");
 $titulo_documento=$_POST['titulo'];
-$fecha_inicio=$_POST['fechaInicio'];
-$fecha_limite=$_POST['fechaFin'];
+$fecha_publicacion=$_POST['fechaPublicacion'];
 $carnet_identidad_docente="1231321412";
 $descripcion=$_POST['descripcion'];
 $semestre_anio='';
@@ -26,23 +25,21 @@ $rutaFinal='../archivos/'.$nombreNuevoArchivo;
 if(move_uploaded_file($_FILES["file"]["tmp_name"],$rutaFinal) && ($extension=="jpg" ||  $extension=="pdf"))
 {
 $query="INSERT INTO invitacion_publica
-(FECHA_INICIO,
-FECHA_LIMITE,
+(FECHA_PUBLICACION,
 NUMERO_CARNET_IDENTIDAD_DOCENTE,
 TITULO_DOCUMENTO,
 SEMESTRE_ANIO,
 DESCRIPCION,
 CODIGO) VALUES 
 (
-'$fecha_inicio',
-'$fecha_limite',
+'$fecha_publicacion',
 NULL,
 '$titulo_documento',
 '$semestre_anio',
 '$descripcion',
 NULL)";
 $result=mysqli_query($conexionBD,$query);
-echo json_encode("La convocatoria ha sido publicada exitosamente");
+echo json_encode("El pliego ha sido publicada exitosamente");
 }
 else{
     echo json_encode("Hubo un problema al subir el archivo o no se encontro el archivo");
