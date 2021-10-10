@@ -1,5 +1,5 @@
 <?php
 $conexionBD=mysqli_connect(
-'localhost','root','','prueba1'
+'localhost','root','','base_tis'
 );
 ?>
