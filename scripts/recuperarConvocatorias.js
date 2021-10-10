@@ -4,7 +4,10 @@ fetch('../backend/consultarConvocatorias.php',{method:'GET'})
 .then(data=>{
 const contenedor_tarjetas=document.getElementById('contenedor-tarjetas');
 contenedor_tarjetas.innerHTML=data;
-console.log(data);
+
 })
 } 
 recuperarConvocatorias();
+
+
+

@@ -27,6 +27,9 @@ $salida.='
             </div>
 
          <a target="_blank" href="../archivos/'.$row['TITULO_DOCUMENTO'].'.pdf">revisar documento adjunto</a>
+         <hr>
+         <h3> pliego de especificaciones aun no publicado</h3>
+         <hr>
     </div>';
 }
 

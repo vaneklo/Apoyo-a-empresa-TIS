@@ -21,7 +21,6 @@ var formulario=document.getElementById('formulario');
 formulario.addEventListener('submit',(e)=>{
 e.preventDefault();
 var datosFormulario=new FormData(formulario);
-
 fetch('../backend/publicarPliego.php',{
 method:'POST',
 body:datosFormulario

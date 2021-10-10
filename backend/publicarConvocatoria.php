@@ -1,7 +1,8 @@
 <?php
 include("conexionBD.php");
 $titulo_documento=$_POST['titulo'];
-$fecha_inicio=$_POST['fechaInicio'];
+//$fecha_inicio=$_POST['fechaInicio'];
+$fecha_inicio=date("Y-m-d");
 $fecha_limite=$_POST['fechaFin'];
 $carnet_identidad_docente="1231321412";
 $descripcion=$_POST['descripcion'];
@@ -23,7 +24,7 @@ $extension=strtolower(pathinfo($nomreOriginalArchivo,PATHINFO_EXTENSION));
 $nombreNuevoArchivo=$_POST['titulo'].'.'.$extension;
 $rutaFinal='../archivos/'.$nombreNuevoArchivo;
 
-if(move_uploaded_file($_FILES["file"]["tmp_name"],$rutaFinal) && ($extension=="jpg" ||  $extension=="pdf"))
+if(move_uploaded_file($_FILES["file"]["tmp_name"],$rutaFinal) && ($extension=="pdf"))
 {
 $query="INSERT INTO invitacion_publica
 (FECHA_INICIO,

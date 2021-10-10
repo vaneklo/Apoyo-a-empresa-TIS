@@ -1,7 +1,7 @@
 <?php
 include("conexionBD.php");
 $titulo_documento=$_POST['titulo'];
-$fecha_publicacion=$_POST['fechaPublicacion'];
+$fecha_publicacion=date("Y-m-d");
 $carnet_identidad_docente="1231321412";
 $descripcion=$_POST['descripcion'];
 $semestre_anio='';
@@ -12,7 +12,7 @@ else{
 if(isset($_POST['semestre2'])){$semestre_anio=('2-'. date("Y"));}
 }
 
-if($titulo_documento===''||$fecha_inicio==='' || $fecha_limite==='' ||  
+if($titulo_documento===''||$fecha_publicacion===''||  
 $descripcion==='' || $semestre_anio===''){
 echo json_encode('Debes llenar todos los campos');}
 
@@ -22,20 +22,20 @@ $extension=strtolower(pathinfo($nomreOriginalArchivo,PATHINFO_EXTENSION));
 $nombreNuevoArchivo=$_POST['titulo'].'.'.$extension;
 $rutaFinal='../archivos/'.$nombreNuevoArchivo;
 
-if(move_uploaded_file($_FILES["file"]["tmp_name"],$rutaFinal) && ($extension=="jpg" ||  $extension=="pdf"))
+if(move_uploaded_file($_FILES["file"]["tmp_name"],$rutaFinal) && ($extension=="pdf"))
 {
-$query="INSERT INTO invitacion_publica
+$query="INSERT INTO pliego_especificaciones
 (FECHA_PUBLICACION,
+SEMESTRE_ANIO,
 NUMERO_CARNET_IDENTIDAD_DOCENTE,
 TITULO_DOCUMENTO,
-SEMESTRE_ANIO,
 DESCRIPCION,
 CODIGO) VALUES 
 (
 '$fecha_publicacion',
+'$semestre_anio',
 NULL,
 '$titulo_documento',
-'$semestre_anio',
 '$descripcion',
 NULL)";
 $result=mysqli_query($conexionBD,$query);
