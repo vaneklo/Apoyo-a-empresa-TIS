@@ -12,38 +12,65 @@ else{
 if(isset($_POST['semestre2'])){$semestre_anio=('2-'. date("Y"));}
 }
 
-if($titulo_documento===''||$fecha_publicacion===''||  
-$descripcion==='' || $semestre_anio===''){
-echo json_encode('Debes llenar todos los campos');}
-
-else{
-$nomreOriginalArchivo=basename($_FILES['file']['name']);
-$extension=strtolower(pathinfo($nomreOriginalArchivo,PATHINFO_EXTENSION));
-$nombreNuevoArchivo=$_POST['titulo'].'.'.$extension;
-$rutaFinal='../archivos/'.$nombreNuevoArchivo;
-
-if(move_uploaded_file($_FILES["file"]["tmp_name"],$rutaFinal) && ($extension=="pdf"))
-{
-$query="INSERT INTO pliego_especificaciones
-(FECHA_PUBLICACION,
-SEMESTRE_ANIO,
-NUMERO_CARNET_IDENTIDAD_DOCENTE,
-TITULO_DOCUMENTO,
-DESCRIPCION,
-CODIGO) VALUES 
-(
-'$fecha_publicacion',
-'$semestre_anio',
-NULL,
-'$titulo_documento',
-'$descripcion',
-NULL)";
-$result=mysqli_query($conexionBD,$query);
-echo json_encode("El pliego ha sido publicada exitosamente");
-}
-else{
-    echo json_encode("Hubo un problema al subir el archivo o no se encontro el archivo");
+ 
+function NoExisteUnaInviEnMismoSemestre($conexionBD,$semestre_anio){
+    $consultaSQL='SELECT * FROM pliego_especificaciones WHERE SEMESTRE_ANIO="'.$semestre_anio.'"';
+    $resultadoConsulta=mysqli_query($conexionBD,$consultaSQL);
+    $filaResultado=mysqli_fetch_array($resultadoConsulta);
+    return !(isset($filaResultado['SEMESTRE_ANIO']));
     }
 
+function camposNoLlenos($titulo_documento,$semestre_anio,$descripcion){
+    return($titulo_documento===''||  $descripcion==='' || $semestre_anio==='');}
+
+
+function ejecutarConsultaSubirDatos($conexionBD,$titulo_documento,$semestre_anio,$descripcion,$fecha_publicacion){
+    $query="INSERT INTO pliego_especificaciones
+    (FECHA_PUBLICACION,
+    SEMESTRE_ANIO,
+    NUMERO_CARNET_IDENTIDAD_DOCENTE,
+    TITULO_DOCUMENTO,
+    DESCRIPCION,
+    CODIGO) VALUES 
+    (
+    '$fecha_publicacion',
+    '$semestre_anio',
+    NULL,
+    '$titulo_documento',
+    '$descripcion',
+    NULL)";
+    $result=mysqli_query($conexionBD,$query);
 }
+
+
+
+function subirDatos($conexionBD,$fecha_publicacion,$titulo_documento,$semestre_anio,$descripcion,$codigo,$carnet_identidad_docente){
+    if(NoExisteUnaInviEnMismoSemestre($conexionBD,$semestre_anio)){
+        if(camposNoLlenos($titulo_documento,$semestre_anio,$descripcion))
+         {echo json_encode('Debes llenar todos los campos');}
+        else{
+        $nomreOriginalArchivo=basename($_FILES['file']['name']);
+        $extension=strtolower(pathinfo($nomreOriginalArchivo,PATHINFO_EXTENSION));
+        $nombreNuevoArchivo=$semestre_anio.'.'.$extension;
+        $rutaFinal='../archivos/pliegos_especificaciones/'.$nombreNuevoArchivo;
+           if(move_uploaded_file($_FILES["file"]["tmp_name"],$rutaFinal))
+           {
+               if($extension=="pdf"){
+                ejecutarConsultaSubirDatos($conexionBD,$titulo_documento,$semestre_anio,$descripcion,$fecha_publicacion);
+                echo json_encode("el pliego ha sido publicado exitosamente");
+                                     }
+              else
+              {echo json_encode("el documento debe estar en formato pdf");}
+           }
+           else{echo json_encode("Hubo un problema al subir el archivo o no se encontro el archivo");}
+        
+        }
+    }
+    
+    else{echo json_encode("ya se publico el pliego de especificaciones para la invitacion del semestre ingresado");}
+}
+
+
+subirDatos($conexionBD,$fecha_publicacion,$titulo_documento,$semestre_anio,$descripcion,$codigo,$carnet_identidad_docente);
+
 ?>
