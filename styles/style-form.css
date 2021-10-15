@@ -2,6 +2,12 @@
     display: flex;
     justify-content: center;
 }
+
+
+.mensaje-rojo{
+    color: red;
+}
+
 .formulario {
     display: flex;
     flex-direction: column;
@@ -70,3 +76,5 @@
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
+
+
