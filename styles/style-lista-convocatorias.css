@@ -81,3 +81,15 @@
     margin: 0px 0px 20px 40px;
     /* color: blue; */
 }
+.mensaje-pliego-no-publicado{
+    height: 100px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.mensaje-pliego-no-publicado h3 {
+    color: white;
+}

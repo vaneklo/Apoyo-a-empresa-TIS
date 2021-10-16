@@ -29,34 +29,40 @@ $salida.='
                             </div>
             <div class="main-section-post-info-content">
                 <div class="main-section-post-info-content-convocatoria">
-                    <h3>invitacion publica</h3>
+                    <h3>Invitacion pública</h3>
                     <div class="card-title">
                         <h4> Título: '.$filaInvitacion['TITULO_DOCUMENTO'].'</h4>
                     </div>
                     <p class="card-description">'.$filaInvitacion['DESCRIPCION'].'</p>
                     <a target="_blank" href="../archivos/inv_publicas/'.$filaInvitacion['SEMESTRE_ANIO'].'.pdf"> ver PDF de la invitacion publica</a>
                 </div>
-            </div>             
-        </div>
-        <hr>
+            
+        
 
 
                 ';
-     if(isset($filaPliego['SEMESTRE_ANIO'])){
-     $salida.='<div>
-                  <div class="card-title">
-                     <h4> Título: '.$filaPliego['TITULO_DOCUMENTO'].'</h4>
-                  </div>
-                      <p class="card-description">'.$filaPliego['DESCRIPCION'].'</p>
-                      <a target="_blank" href="../archivos/pliegos_especificaciones/'.$filaPliego['SEMESTRE_ANIO'].'.pdf">ver PDF pliego de especificaciones</a>
-                </div>
-     </div>
+    if(isset($filaPliego['SEMESTRE_ANIO'])){
+    $salida.='
+    <div class="main-section-post-info-content-pliego">
+        <h3>Pligo de especificaciones</h3>
+        <div class="card-title">
+            <h4> Título: '.$filaPliego['TITULO_DOCUMENTO'].'</h4>
+        </div>
+        <p class="card-description">'.$filaPliego['DESCRIPCION'].'</p>
+        <a target="_blank" href="../archivos/pliegos_especificaciones/'.$filaPliego['SEMESTRE_ANIO'].'.pdf">ver PDF pliego de especificaciones</a>
+    </div>
+    </div>
+    </div>
+    </div>
      ';
      } 
     else{
-    $salida.='<div>
-              pliego aun no publicado      
+    $salida.='<div class="mensaje-pliego-no-publicado main-section-post-info-content-pliego">
+                <h3>Pliego aun no publicado</h3>      
               </div>
+              </div>
+    </div>
+    </div>
     </div>';
 
 
