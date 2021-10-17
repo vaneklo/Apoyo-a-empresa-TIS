@@ -20,14 +20,14 @@ else{
 }
 
 const validarTitulo=(titulo)=>{
-    let patron = new RegExp("^[a-zA-Zñáéíóú]+ ?");
+    let patron = new RegExp("^[a-zA-Zñáéíóú ]+$ ?");
     return !!patron.test(titulo);}
 
 const semestreValido=(estado1Semestre,estado2semestre)=>{return(estado1Semestre=='on'||estado2semestre=='on');}
 
 
 const validarDescripcion=(descripcion)=>{
-    let patron = new RegExp("^[a-z||A-Z||0-9][a-zA-Z\t\h\r\n\<br />]+"); 
+    let patron = new RegExp("^[a-z||A-Z||0-9][a-zA-Z_.,:;\t\h\r\n\<br />]+"); 
     return !!patron.test(descripcion);}
 
 
@@ -47,33 +47,33 @@ console.log('sadsadas')
 
     if(datosFormulario.get('titulo')=='')
     {validoParaSubir=false;
-    espacioMensaje.innerHTML+='<p class=mensaje-rojo>*el titulo no puede estar vacio</p>';
+    espacioMensaje.innerHTML+='<p class=mensaje-rojo>*Llenar todos los campos</p>';
     }
 
     if(datosFormulario.get('descripcion')=='')
     {validoParaSubir=false;
-    espacioMensaje.innerHTML+='<p class=mensaje-rojo>*la decripcion no puede estar vacia</p>';
+    espacioMensaje.innerHTML+='<p class=mensaje-rojo>*La decripcion no puede estar vacia</p>';
     }
 
     if(!validarTitulo(datosFormulario.get('titulo')))
     {validoParaSubir=false; 
-    espacioMensaje.innerHTML+='<p class=mensaje-rojo>*el titulo no puede contener caracteres especiales, ni numeros</p>' }    
+    espacioMensaje.innerHTML+='<p class=mensaje-rojo>*El titulo no puede contener caracteres especiales, ni numeros</p>' }    
 
     if(!validarDescripcion(datosFormulario.get('descripcion')))
     {validoParaSubir=false;
-     espacioMensaje.innerHTML+='<p class=mensaje-rojo>*la decripcion no puede contener caracteres especiales</p>';}
+     espacioMensaje.innerHTML+='<p class=mensaje-rojo>*La decripcion no puede contener caracteres especiales</p>';}
        
     if(!validarTamanioTitulo(datosFormulario.get('titulo')))
     {validoParaSubir=false;
-     espacioMensaje.innerHTML+='<p class=mensaje-rojo>*el titulo debe contener entre 5 y 35 caracteres</p>';}
+     espacioMensaje.innerHTML+='<p class=mensaje-rojo>*El titulo debe contener entre 5 y 35 caracteres</p>';}
 
     if(!validarTamanioDescripcion(datosFormulario.get('descripcion')))
     {validoParaSubir=false;    
-     espacioMensaje.innerHTML+='<p class=mensaje-rojo>*la descripcion debe contener entre 100 y 500 caracteres</p>';}
+     espacioMensaje.innerHTML+='<p class=mensaje-rojo>*La descripcion debe contener entre 100 y 500 caracteres</p>';}
 
     if(!semestreValido(datosFormulario.get('semestre1'),datosFormulario.get('semestre2'))){
     validoParaSubir=false;    
-    espacioMensaje.innerHTML+='<p class=mensaje-rojo>*debe seleccionar un semestre </p>';}
+    espacioMensaje.innerHTML+='<p class=mensaje-rojo>*Debe seleccionar un semestre </p>';}
 
 
     if(validoParaSubir){
@@ -83,7 +83,7 @@ console.log('sadsadas')
             })
             .then(res=>res.json())
             .then(data=>{
-         if(data=="el pliego ha sido publicado exitosamente"){espacioMensaje.innerHTML+='<p class=mensaje-verde>*'+data+'</p>';}
+         if(data=="El pliego ha sido publicado exitosamente"){espacioMensaje.innerHTML+='<p class=mensaje-verde>*'+data+'</p>';}
          else{espacioMensaje.innerHTML+='<p class=mensaje-rojo>*'+data+'</p>';}
 
         })
