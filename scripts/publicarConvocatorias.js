@@ -43,14 +43,8 @@ const validarMinimaFechaLimite=(fechaL)=>{
     }
 
 
-const validarMaximaFechaLimite=(fechaL)=>{
-let fechaHoy=new Date();
-let fechaLimite=new Date(fechaL);
-let milisegundosDia=86400000;
-let milisegundosTranscurridos=(fechaHoy.getTime()-fechaLimite.getTime())*-1;
-let diasTrancurridos=Math.round(milisegundosTranscurridos/milisegundosDia);
-return (diasTrancurridos<21 );
-}
+
+
 const semestreValido=(estado1Semestre,estado2semestre)=>{
 return(estado1Semestre=='on'||estado2semestre=='on');
 }
@@ -97,9 +91,7 @@ if(!validarTamanioDescripcion(datosFormulario.get('descripcion')))
     espacioMensaje.innerHTML+='<p class=mensaje-rojo>*Debe incluir una fecha límite</p>';}
 
 
-if(!validarMaximaFechaLimite(datosFormulario.get('fechaFin'))){
-            validoParaSubir=false;    
-            espacioMensaje.innerHTML+='<p class=mensaje-rojo>*La fecha limite debe ser menor a las tres semanas</p>';}
+
 
 if(validarMinimaFechaLimite(datosFormulario.get('fechaFin'))){
     console.log('asdasdasdas')

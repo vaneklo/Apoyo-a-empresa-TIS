@@ -6,7 +6,7 @@ $result=mysqli_query($conexionBD,$query);
 
 $salida='';
 while ($filaInvitacion=mysqli_fetch_array($result)){
-$consultaPliegoRespectivo='SELECT * FROM PLIEGO_ESPECIFICACIONES WHERE SEMESTRE_ANIO="'.$filaInvitacion['SEMESTRE_ANIO'].'"';
+$consultaPliegoRespectivo='SELECT * FROM PLIEGO_ESPECIFICACIONES WHERE SEMSTRE_ANIO ="'.$filaInvitacion['SEMESTRE_ANIO'].'"';
 $resultadoConsulta=mysqli_query($conexionBD,$consultaPliegoRespectivo);
 $filaPliego=mysqli_fetch_array($resultadoConsulta);
 
@@ -41,7 +41,7 @@ $salida.='
 
 
                 ';
-    if(isset($filaPliego['SEMESTRE_ANIO'])){
+    if(isset($filaPliego['SEMSTRE_ANIO'])){
     $salida.='
     <div class="main-section-post-info-content-pliego">
         <h3>Pligo de especificaciones</h3>
@@ -49,7 +49,7 @@ $salida.='
             <h4> Título: '.$filaPliego['TITULO_DOCUMENTO'].'</h4>
         </div>
         <p class="card-description">'.$filaPliego['DESCRIPCION'].'</p>
-        <a target="_blank" href="../archivos/pliegos_especificaciones/'.$filaPliego['SEMESTRE_ANIO'].'.pdf">ver PDF pliego de especificaciones</a>
+        <a target="_blank" href="../archivos/pliegos_especificaciones/'.$filaPliego['SEMSTRE_ANIO'].'.pdf">ver PDF pliego de especificaciones</a>
     </div>
     </div>
     </div>

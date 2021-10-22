@@ -27,19 +27,18 @@ $descripcion==='' || $semestre_anio==='');}
 
 function ejecutarConsultaSubirDatos($conexionBD,$fecha_inicio,$fecha_limite,$titulo_documento,$semestre_anio,$descripcion){
     $query="INSERT INTO invitacion_publica
-    (FECHA_INICIO,
+    (SEMESTRE_ANIO,
+    FECHA_INICIO,
     FECHA_LIMITE,
     NUMERO_CARNET_IDENTIDAD_DOCENTE,
     TITULO_DOCUMENTO,
-    SEMESTRE_ANIO,
     DESCRIPCION,
     CODIGO) VALUES 
-    (
+    ('$semestre_anio',
     '$fecha_inicio',
     '$fecha_limite',
     NULL,
     '$titulo_documento',
-    '$semestre_anio',
     '$descripcion',
     NULL)";
     $result=mysqli_query($conexionBD,$query);
