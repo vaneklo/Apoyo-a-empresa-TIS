@@ -18,45 +18,73 @@ function estudianteRegistrado($conexionBD,$codigoSis){
     $filaResultado=mysqli_fetch_array($resultadoConsulta);
     return (!isset($filaResultado['CI']));
     }
-    
+
+function codigoEsValido($conexionBD,$codigoClase){
+    $consultaSQL='SELECT * FROM clase WHERE COD_CLASE="'.$codigoClase.'"';
+    $resultadoConsulta=mysqli_query($conexionBD,$consultaSQL);
+    $filaResultado=mysqli_fetch_array($resultadoConsulta);
+    return (isset($filaResultado['SEMESTRE']));
+}
+
+function correoRegistrado($conexionBD,$correo){
+    $consultaSQL='SELECT * FROM estudiante WHERE CORREO_ELECTRONICO="'.$correo.'"';
+    $resultadoConsulta=mysqli_query($conexionBD,$consultaSQL);
+    $filaResultado=mysqli_fetch_array($resultadoConsulta);
+    return (isset($filaResultado['CI']));
+    }
+
     function ejecutarConsultaSubirDatos($conexionBD,$nombre,$apellidoPaterno,$apellidoMaterno,$carnetIdentidad,$codigoSis,$correo,$carrera,$contrasena,$codigoClase){
        $cifrado=password_hash($contrasena,PASSWORD_DEFAULT,['cost'=>10]);
        $query="INSERT INTO estudiante
         (CODIGO_SIS ,
+        SEMESTRE,
+        COD_CLASE,
+        NOMBRE_CORTO,
+        CI,
         NOMBRE,
         APELLIDO_PATERNO,
         APELLIDO_MATERNO,
-        CI,
         CARRERA,
         CORREO_ELECTRONICO,
-        CONTRASENA, 
-        COD_CLASE,      
-        NOMBRE_CORTO,
-        ESTADO_CIVIL,
-        TELEFONO,
-        APROBADO
-         ) VALUES 
+        CONTRASENA_ESTUDIANTE, 
+        ROL
+        )VALUES 
         ('$codigoSis',
+          null,
+          '$codigoClase',
+          NULL,
+        '$carnetIdentidad',  
         '$nombre',
         '$apellidoPaterno',
         '$apellidoMaterno',
-        '$carnetIdentidad',
         '$carrera',
         '$correo',
         '$cifrado',
-        null,
-        null,
-        NULL,
-        null,
-        null
+        NULL
         )";
-
         $result=mysqli_query($conexionBD,$query);}
     
+
     function subirDatos($conexionBD,$nombre,$apellidoPaterno,$apellidoMaterno,$carnetIdentidad,$codigoSis,$correo,$carrera,$contrasena,$codigoClase){
         if(estudianteRegistrado($conexionBD,$codigoSis)){
-            ejecutarConsultaSubirDatos($conexionBD,$nombre,$apellidoPaterno,$apellidoMaterno,$carnetIdentidad,$codigoSis,$correo,$carrera,$contrasena,$codigoClase) ; 
-            echo json_encode("Registro exitoso");}
+        if(codigoEsValido($conexionBD,$codigoClase))
+            {
+                if(!correoRegistrado($conexionBD,$correo))
+                {
+                    ejecutarConsultaSubirDatos($conexionBD,$nombre,$apellidoPaterno,$apellidoMaterno,$carnetIdentidad,$codigoSis,$correo,$carrera,$contrasena,$codigoClase) ; 
+                    echo json_encode("Registro exitoso");
+                }
+                else
+                {
+                    echo json_encode("el correo ingresado ya registrado");
+                }
+
+            }
+        else{
+            echo json_encode("el codigo ingresado es incorrecto");
+            }
+        
+        }
         else{echo json_encode("el estudiante ya fue registrado en el semestre actual");}
     }
     subirDatos($conexionBD,$nombre,$apellidoPaterno,$apellidoMaterno,$carnetIdentidad,$codigoSis,$correo,$carrera,$contrasena,$codigoClase);

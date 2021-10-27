@@ -17,7 +17,7 @@ function NoExisteUnaInviEnMismoSemestre($conexionBD,$semestre_anio){
     $consultaSQL='SELECT * FROM pliego_especificaciones WHERE SEMSTRE_ANIO="'.$semestre_anio.'"';
     $resultadoConsulta=mysqli_query($conexionBD,$consultaSQL);
     $filaResultado=mysqli_fetch_array($resultadoConsulta);
-    return !(isset($filaResultado['SEMESTRE_ANIO']));
+    return !(isset($filaResultado['SEMSTRE_ANIO']));
     }
 
 function camposNoLlenos($titulo_documento,$semestre_anio,$descripcion){
@@ -31,7 +31,8 @@ function ejecutarConsultaSubirDatos($conexionBD,$titulo_documento,$semestre_anio
     NUMERO_CARNET_IDENTIDAD_DOCENTE,
     TITULO_DOCUMENTO,
     DESCRIPCION,
-    CODIGO) VALUES 
+    CODIGO
+    ) VALUES 
     (
     '$semestre_anio',
     '$fecha_publicacion',

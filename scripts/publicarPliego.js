@@ -38,7 +38,7 @@ const validarTamanioDescripcion=(descripcion)=>{return (descripcion.length>99 &&
 
 
 const subirDatos=()=>{
-console.log('sadsadas')
+
     let datosFormulario=new FormData(formulario);
     let validoParaSubir=true;
     espacioMensaje.innerHTML="";
@@ -99,7 +99,6 @@ subirDatos();
 e.preventDefault();
 }
 );
-
 
 
 
