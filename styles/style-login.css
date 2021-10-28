@@ -41,7 +41,8 @@
     align-items: center;
 }
 .main-section-form p {
-    font-size: 40px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 45px;
     font-weight: bold;
 }
 .main-section-form label {
