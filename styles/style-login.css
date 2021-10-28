@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* color: white; */
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: silver; */
+    height: 100px;
+    width: 100%;
+    font-size: 25px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* height: 1000px; */
+}
+.main-section {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #222;
+    /* height: auto; */
+    /* width: 800px; */
+    margin-top: 80px;
+    box-shadow: 0 6px 6px 0 #20212447;
+}
+.main-section-form {
+    /* width: 600px; */
+    padding: 50px 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-section-form p {
+    font-size: 40px;
+    font-weight: bold;
+}
+.main-section-form label {
+    font-size: 20px;
+    margin-top: 40px;
+}
+.main-section-form input {
+    background-color: white;
+    width: 300px;
+    font-size: 17px;
+    margin-top: 20px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #222;
+    outline: none;
+}
+.main-section-form button {
+    margin-top: 60px;
+    padding: 0px 10px;
+    height: 40px;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid rgb(37, 173, 24);
+    color: rgb(37, 173, 24);
+    cursor: pointer;
+}
+.main-section-form button:active {
+    padding: 0px 11px;
+    background-color: rgb(37, 173, 24);
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+}
+#main-section-form-registrarse {
+    font-size: 15px;
+}
+#main-section-form-registrarse a{
+    color: steelblue;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: silver;
+    height: 110px;
+    width: 100%;
+}
