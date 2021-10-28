@@ -1,7 +1,10 @@
 <?php
 include("conexionBD.php");
-$correoElectronico="pero@gmail.com";
-$contrasena="123123123";
+// $correoElectronico="pero@gmail.com";
+// $contrasena="123123123";
+
+$correoElectronico = $_POST['usuario'];
+$contrasena = $_POST['password'];
 
 function esUnEstudiante($correoElectronico,$conexionBD){
     $consultaSQL='SELECT * FROM ESTUDIANTE WHERE CORREO_ELECTRONICO="'.$correoElectronico.'"';

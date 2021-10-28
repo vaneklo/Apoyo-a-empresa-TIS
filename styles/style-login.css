@@ -58,6 +58,30 @@
     border-bottom: 1px solid #222;
     outline: none;
 }
+.respuesta-correo {
+    text-align: center;
+    width: 300px;
+    margin-top: 5px;
+    background-color: rgba(25, 127, 195, 0.7);
+    border-radius: 4px;
+    padding: 7px;
+}
+.respuesta-correo p {
+    font-size: 15px;
+    color: white;
+}
+.respuesta-password {
+    text-align: center;
+    width: 300px;
+    margin-top: 5px;
+    background-color: rgba(255, 71, 71, 0.7);
+    border-radius: 4px;
+    padding: 7px;
+}
+.respuesta-password p {
+    font-size: 15px;
+    color: white;
+}
 .main-section-form button {
     margin-top: 60px;
     padding: 0px 10px;

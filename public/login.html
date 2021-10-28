@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
     <header class="header">
@@ -17,12 +17,18 @@
     </header>
     <main class="main">
         <section class="main-section">
-            <form action="" class="main-section-form">
+            <form action="" class="main-section-form" id="form">
                 <p>Iniciar Sesión</p>
                 <label for="correo">Correo electrónico</label>
-                <input type="text" id="correo" class="main-section-form-input">
+                <input type="text" name="correo" class="main-section-form-input">
+                <div id="respuesta-correo">
+                    
+                </div>
                 <label for="password">Contraseña</label>
-                <input type="password" id="password" class="main-section-form-input">
+                <input type="password" name="password" class="main-section-form-input">
+                <div id="respuesta-password">
+                    
+                </div>
                 <button type="submit">Ingresar</button>
                 <label for="" id="main-section-form-registrarse">¿No tienes una cuenta? <a href="./RegistrarseEnClase.html">Regístrate</a></label>
             </form>
@@ -31,5 +37,7 @@
     <footer class="footer">
 
     </footer>
+
+    <script src="../scripts/login.js"></script>
 </body>
 </html>
