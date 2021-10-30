@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    <title>Publicar Pliego</title>
+    <title>Crear Grupo-Empresa</title>
 </head>
 <body>
     <header>
@@ -23,39 +23,34 @@
             <a class="itemNav" href="./RegistrarseEnClase.html">Registrarse</a>
             <a class="itemNav" href="./crearClase.html">Crear Clase</a>
             <a class="itemNav" href="./crearGrupoEmpresa.html">Crear Grupo-Empresa</a>
+
            </ul>
         </nav>
     </header>
     <div class="div-formulario">
       <form id="formulario" class="formulario">
-      <h1>PUBLICAR PLIEGO DE ESPECIFICACIONES</h1> 
-        <h2>Título</h2>
-        <input class="input-titulo" name="titulo" type="text" placeholder="Intoduzca el título">
-
-        <h2>Seleccione el semestre</h2>
-        <div class="input-semestre">
-          <input type="checkbox" name="semestre1" id="opcion1" onclick="mensaje(1)">
-          <span id="1erSemestre"></span>
-          <!-- <br><br>S -->
-          <input type="checkbox" name="semestre2" id="opcion2" onclick="mensaje(2)">
-          <span id="2doSemestre"></span>
-        </div>
+      <h1>REGISTRAR GRUPO-EMPRESA</h1> 
+        <h2>Nombre de la empresa*:</h2>
+        <input class="input-titulo" name="nombreEmpresa" type="text" placeholder="Intoduzca el nombre de la empresa">
  
-        <h2>Descripcion del Pliego</h2>
-        <textarea class="input-description" name="descripcion" cols="30" rows="10"></textarea>
+        <h2>Tipo de Sociedad*:</h2>
+        <input class="input-titulo" name="sociedad" type="text" placeholder="Intoduzca el tipo de sociedad">
+ 
+        <h2>Direccion de la empresa:</h2>
+        <input class="input-titulo" name="direccionEmpresa" type="text" placeholder="Intoduzca la direccion">
 
-        <h2>Adjunte el documento del Pliego(pdf)</h2>
-        <input class="input-file" type="file" name="file" >
+        <h2>Telefono:</h2>
+        <input class="input-titulo" name="telefonoEmpresa" type="text" placeholder="Intoduzca el telefono de referencia">
         <hr>
         <div id="espacio-mensaje"> </div>
         <hr>
 
-        <button type="submit" name="botonFormulario">Publicar Pliego de Especificaciones</button>
+        <button type="submit" name="botonFormulario">Registrar empresa</button>
       </form>
 <br><br><br>
     </div>
     
-<script src="../scripts/publicarPliego.js"></script>
+<script src="../scripts/registrarEmpresa.js"></script>
 
 </body>
 </html>
