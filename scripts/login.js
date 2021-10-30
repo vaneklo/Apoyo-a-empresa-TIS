@@ -35,5 +35,13 @@ formulario.addEventListener('submit', function(e) {
                 </div>
                 `
             }
+
+            if (data === 'contrasena de docente incorrecta') {
+                respuestaPassword.innerHTML = `
+                <div class="respuesta-password">
+                    <p>Contraseña de docente incorrecta</p>
+                </div>
+                `
+            }
         })
 });
