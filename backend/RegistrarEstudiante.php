@@ -10,8 +10,6 @@ $carrera=$_POST['carrera'];
 $contrasena=$_POST['contrasenaEstudiante'];
 $codigoClase=$_POST['codigoClase'];
 
-
-
 function estudianteRegistrado($conexionBD,$codigoSis){
     $consultaSQL='SELECT * FROM estudiante WHERE CODIGO_SIS="'.$codigoSis.'"';
     $resultadoConsulta=mysqli_query($conexionBD,$consultaSQL);
@@ -36,10 +34,10 @@ function correoRegistrado($conexionBD,$correo){
     function ejecutarConsultaSubirDatos($conexionBD,$nombre,$apellidoPaterno,$apellidoMaterno,$carnetIdentidad,$codigoSis,$correo,$carrera,$contrasena,$codigoClase){
        $cifrado=password_hash($contrasena,PASSWORD_DEFAULT,['cost'=>10]);
        $query="INSERT INTO estudiante
-        (CODIGO_SIS ,
-        SEMESTRE,
+        (CODIGO_SIS,
         COD_CLASE,
         NOMBRE_CORTO,
+        NOMBRE_LARGO,
         CI,
         NOMBRE,
         APELLIDO_PATERNO,
@@ -47,12 +45,16 @@ function correoRegistrado($conexionBD,$correo){
         CARRERA,
         CORREO_ELECTRONICO,
         CONTRASENA_ESTUDIANTE, 
-        ROL
+        ROL,
+        NOTA_1_PARCIAL,
+        NOTA_2_PARCIAL,
+        NOTA_EXAMEN_FINAL,
+        NOTA_2_INSTANCIA
         )VALUES 
         ('$codigoSis',
-          null,
-          '$codigoClase',
-          NULL,
+        '$codigoClase',
+        NULL,
+        NULL,
         '$carnetIdentidad',  
         '$nombre',
         '$apellidoPaterno',
@@ -60,11 +62,13 @@ function correoRegistrado($conexionBD,$correo){
         '$carrera',
         '$correo',
         '$cifrado',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
         NULL
         )";
         $result=mysqli_query($conexionBD,$query);}
-    
-
     function subirDatos($conexionBD,$nombre,$apellidoPaterno,$apellidoMaterno,$carnetIdentidad,$codigoSis,$correo,$carrera,$contrasena,$codigoClase){
         if(estudianteRegistrado($conexionBD,$codigoSis)){
         if(codigoEsValido($conexionBD,$codigoClase))

@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style-header.css">
+    <link rel="stylesheet" href="../styles/style-form.css">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Registrarse</title>
 </head>
 <body>
     
@@ -17,11 +18,13 @@
         <nav class="navBar">
           <h1>APOYO A LA EMPRESA TIS</h1>
              <ul>
-              <a class="itemNav" href="./formularioConvocatorias.html"> Publicar Convocatorias</a>
-              <a class="itemNav" href="./formularioPliego.html"> Publicar Pliego</a>
-              <a class="itemNav" href="./listaConvocatorias.html"> Lista de Convocatorias</a>
-              <a class="itemNav" href="./RegistrarseEnClase.html">registrarse</a>
-              <a class="itemNav" href="./crearClase.html">crearClase</a>
+             <a class="itemNav" href="./formularioConvocatorias.html"> Publicar Convocatorias</a>
+            <a class="itemNav" href="./formularioPliego.html"> Publicar Pliego</a>
+            <a class="itemNav" href="./listaConvocatorias.html"> Lista de Convocatorias</a>
+            <a class="itemNav" href="./RegistrarseEnClase.html">Registrarse</a>
+            <a class="itemNav" href="./crearClase.html">Crear Clase</a>
+            <a class="itemNav" href="./crearGrupoEmpresa.html">Crear Grupo-Empresa</a>
+            <a class="itemNav" href="./login.html">iniciar sesion</a>
              </ul>
           </nav>
       </header>
@@ -49,12 +52,14 @@
           <h2>Carrera</h2>
           <p>Ing.</p><input class="input-titulo" name="carrera" type="text">
 
-          <h2>Contrasena</h2>
+          <h2>Contraseña</h2>
           <input class="input-titulo" name="contrasenaEstudiante" type="password">
          
-          <h2>codigo de la clase</h2>
+          <h2>Codigo de la clase</h2>
           <input class="input-titulo" name="codigoClase" type="text">
-         
+         <hr>
+        <div id="espacio-mensaje"> </div>
+        <hr>
   
           <button type="submit" name="botonFormulario">Registrarse</button>
         </form>
