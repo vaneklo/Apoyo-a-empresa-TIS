@@ -1,0 +1,29 @@
+.sidebar{
+   margin-top: 0%;
+   border:1px rgb(34, 34, 31) solid;
+   background-color: #8BC6EC;
+   width: 20%;
+   height: 100%;
+}
+
+.sidebar-title{
+background-color: #378bc4;
+padding-left: 10px;
+}
+
+.sidebar-list{
+   margin-top: 0px;
+}
+
+.sidebar-item{
+   padding-left: 18px;
+   font-size: 20px;
+   display: inline-block;
+   margin-top: 18px;
+   margin-bottom: 20px;
+}
+
+.cuerpo-convocatorias{
+display: flex;
+
+}

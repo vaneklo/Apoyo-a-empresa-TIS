@@ -36,5 +36,11 @@ formulario.addEventListener('submit', function(e) {
                 </div>
                 `
             }
+
+            if(data === 'contrasena de estudiante correcta'){
+              window.location.href = './listaConvocatorias.html';}
+
+
+
         })
 });

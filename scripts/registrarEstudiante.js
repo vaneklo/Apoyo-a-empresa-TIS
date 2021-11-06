@@ -95,9 +95,9 @@ const subirDatos=()=>{
     {validoParaSubir=false; 
     espacioMensaje.innerHTML+='<p class=mensaje-rojo>*El codigo SIS debe tener 9 caracteres</p>' }    
 
-    if(!validarCorreo(datosFormulario.get('correoEstudiante')))
-    {validoParaSubir=false; 
-    espacioMensaje.innerHTML+='<p class=mensaje-rojo>*Debe ingresar su correo institucional</p>' }    
+    // if(!validarCorreo(datosFormulario.get('correoEstudiante')))
+    // {validoParaSubir=false; 
+    // espacioMensaje.innerHTML+='<p class=mensaje-rojo>*Debe ingresar su correo institucional</p>' }    
     
     if(!validarCarrera(datosFormulario.get('carrera')))
     {validoParaSubir=false; 
