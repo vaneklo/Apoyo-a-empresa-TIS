@@ -27,7 +27,7 @@
     font-weight: bolder;
 }
 .input-titulo {
-    height: 30px;
+    height: 35px;
     width: 90%;
     border-radius: 4px;
     outline: none;
@@ -35,6 +35,9 @@
     padding-left: 10px;
     background-color: #e8eeef;
     box-shadow: 0 1px 0 rgb(0 0 0 / 3%) inset;
+}
+.input-titulo:focus {
+    background-color: #d1d9dd;
 }
 .input-semestre {
     display: flex;
@@ -56,17 +59,23 @@
     background-color: #e8eeef;
     box-shadow: 0 1px 0 rgb(0 0 0 / 3%) inset;
 }
+.input-description:focus {
+    background-color: #d1d9dd;
+}
 
 .input-date-fin {
     color: #757575;
     width: 200px;
-    height: 30px;
+    height: 35px;
     padding: 0px 10px;
     border-radius: 4px;
     outline: none;
     border: none;
     background-color: #e8eeef;
     box-shadow: 0 1px 0 rgb(0 0 0 / 3%) inset;
+}
+.input-date-fin:focus {
+    background-color: #d1d9dd;
 }
 .formulario button {
     font-size: 16px;
