@@ -1,6 +1,8 @@
 .div-formulario {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -15,19 +17,24 @@
     /* align-items: center; */
     padding: 30px;
     height: 1000px;
+    width: 70%;
     /* background-color: rgba(65, 105, 225, 0.445); */
     border-radius: 20px;
-    background-color: #8BC6EC;
-    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    /* background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%); */
+}
+.formulario-publicar {
+    font-weight: bolder;
 }
 .input-titulo {
     height: 30px;
     width: 90%;
-    border-radius: 5px;
+    border-radius: 4px;
     outline: none;
     border: none;
     padding-left: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #e8eeef;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 3%) inset;
 }
 .input-semestre {
     display: flex;
@@ -42,40 +49,38 @@
 }
 .input-description {
     width: 90%;
-    border-radius: 5px;
+    border-radius: 4px;
     outline: none;
     border: none;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #e8eeef;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 3%) inset;
 }
-.input-date-inicio{
-    width: 150px;
-    height: 30px;
-    padding-left: 10px;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-}
-.input-date-fin {
 
-    width: 150px;
+.input-date-fin {
+    color: #757575;
+    width: 200px;
     height: 30px;
-    padding-left: 10px;
-    border-radius: 5px;
+    padding: 0px 10px;
+    border-radius: 4px;
     outline: none;
     border: none;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #e8eeef;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 3%) inset;
 }
 .formulario button {
+    font-size: 16px;
+    background-color: #1abc9c;
+    color: #FFF;
     height: 40px;
-    width: 200px;
+    width: 100%;
     justify-self: center;
     align-self: center;
-    border-radius: 40px;
+    border-radius: 2px;
     border: none;
 }
 .formulario button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #109177;
     cursor: pointer;
 }
 

@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     /* color: white; */
-    color: #222;
+    /* color: #222; */
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
@@ -20,7 +20,8 @@
     font-size: 50px;
 }
 .navBar ul {
-    background-color: #8BC6EC;
+    /* background-color: #8BC6EC; */
+    background-color: #109177;
     margin: 20px 0px;
     height: 50px;
     width: 100%;
@@ -31,4 +32,6 @@
 }
 .navBar a {
     text-decoration: none;
+    color: white;
+    font-size: 15px;
 }
