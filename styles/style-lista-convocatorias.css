@@ -1,0 +1,95 @@
+#contenedor-tarjetas {
+    padding: 40px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#contenedor-tarjetas h2 {
+    font-weight: bold;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 70%;
+    margin: 40px 0px;   
+}
+
+
+
+.card {
+    /* height: 200px; */
+    /* border-top: solid 1px #222; */
+    border-top: solid 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.card-sa {
+    padding-left: 17px;
+    margin: 10px 0px;
+}
+.card-sa p {
+    /* color: rgba(34, 34, 34, 0.52); */
+    color: #222;
+    margin-bottom: 10px;
+}
+.main-section-post-info {
+    display: flex;
+    flex-direction: row;
+}
+.main-section-post-info-photo {
+    margin: 0px 40px;
+}
+.main-section-post-info-photo img{
+    width: 100px;
+}
+.main-section-post-info-content {
+    display: flex;
+    flex-direction: column;
+    border-left: solid 1px #2222;
+    width: 100%;
+}
+.main-section-post-info-content-convocatoria {
+    margin: 0px 0px 20px 20px;
+}
+.main-section-post-info-content-convocatoria h3 {
+    /* background-color: rgba(80, 120, 184, 0.479); */
+    color: cornflowerblue;
+    margin-bottom: 10px;
+    font-weight: 20px;
+}
+.card-description {
+    margin: 20px 0px;
+    padding-left: 40px;
+}
+.main-section-post-info-content-pliego {
+    margin: 0px 0px 20px 20px;
+}
+.main-section-post-info-content-pliego h3 {
+    /* background-color: rgba(80, 120, 184, 0.479); */
+    color: cornflowerblue;
+    margin-bottom: 10px;
+    font-weight: 20px;
+}
+.main-section-post-info-content-pliego p {
+    margin: 20px 0px;
+    padding-left: 40px;
+}
+.main-section-post-info-content a {
+    margin: 0px 0px 20px 40px;
+    /* color: blue; */
+}
+.mensaje-pliego-no-publicado{
+    height: 100px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.mensaje-pliego-no-publicado h3 {
+    color: white;
+}

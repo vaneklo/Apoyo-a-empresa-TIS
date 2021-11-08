@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style-header.css">
+    <link rel="stylesheet" href="../styles/style-form.css">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <title>Crear Grupo-Empresa</title>
+</head>
+<body>
+    <header>
+      <nav class="navBar">
+        <h1>APOYO A LA EMPRESA TIS</h1>
+           <ul>
+            <a class="itemNav" href="./formularioConvocatorias.html"> Publicar Convocatorias</a>
+            <a class="itemNav" href="./formularioPliego.html"> Publicar Pliego</a>
+            <a class="itemNav" href="./listaConvocatorias.html"> Lista de Convocatorias</a>
+            <a class="itemNav" href="./RegistrarseEnClase.html">Registrarse</a>
+            <a class="itemNav" href="./crearClase.html">Crear Clase</a>
+            <a class="itemNav" href="./crearGrupoEmpresa.html">Crear Grupo-Empresa</a>
+
+           </ul>
+        </nav>
+    </header>
+    <div class="div-formulario">
+      <form id="formulario" class="formulario">
+      <h1>REGISTRAR GRUPO-EMPRESA</h1> 
+        <h2>Nombre de la empresa*:</h2>
+        <input class="input-titulo" name="nombreEmpresa" type="text" placeholder="Intoduzca el nombre de la empresa">
+ 
+        <h2>Tipo de Sociedad*:</h2>
+        <input class="input-titulo" name="sociedad" type="text" placeholder="Intoduzca el tipo de sociedad">
+ 
+        <h2>Direccion de la empresa:</h2>
+        <input class="input-titulo" name="direccionEmpresa" type="text" placeholder="Intoduzca la direccion">
+
+        <h2>Telefono:</h2>
+        <input class="input-titulo" name="telefonoEmpresa" type="text" placeholder="Intoduzca el telefono de referencia">
+        <hr>
+        <div id="espacio-mensaje"> </div>
+        <hr>
+
+        <button type="submit" name="botonFormulario">Registrar empresa</button>
+      </form>
+<br><br><br>
+    </div>
+    
+<script src="../scripts/registrarEmpresa.js"></script>
+
+</body>
+</html>
