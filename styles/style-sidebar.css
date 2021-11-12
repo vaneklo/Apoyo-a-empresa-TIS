@@ -23,7 +23,9 @@ padding-left: 10px;
    margin-bottom: 20px;
 }
 
-.cuerpo-convocatorias{
+.flex-body{
 display: flex;
-
 }
+.flex-body div{
+   margin-right:5%;
+   }

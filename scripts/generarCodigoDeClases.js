@@ -1,5 +1,5 @@
-const campoCodigoClase=document.getElementById('espacio-codigo-clase');
 
+const campoCodigoClase=document.getElementById('espacio-codigo-clase');
 const generarCodigoAleatorio=()=>{
     fetch('../backend/crearClaseConNuevoCodigo.php',{method:'GET'})
     .then(res=>res.json())
