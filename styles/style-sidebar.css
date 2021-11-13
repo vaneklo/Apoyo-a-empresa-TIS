@@ -1,13 +1,19 @@
 .sidebar{
    margin-top: 0%;
-   border:1px rgb(34, 34, 31) solid;
-   background-color: #8BC6EC;
+   border:1px rgb(83, 83, 83) solid;
+   background-color: #e8edf0;
    width: 20%;
-   height: 100%;
+   height: 500px;
+}
+.sidebar a{ 
+text-decoration: none;
+color: black;
+font-size: 20px;
 }
 
 .sidebar-title{
-background-color: #378bc4;
+width: 95%;
+background-color: #d9e4eb;
 padding-left: 10px;
 }
 
