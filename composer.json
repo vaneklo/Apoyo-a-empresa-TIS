@@ -1,0 +1,15 @@
+{
+    "name": "ariel/apoyo-a-empresa-tis",
+    "autoload": {
+        "psr-4": {
+            "Ariel\\ApoyoAEmpresaTis\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ariel",
+            "email": "201710012@est.umss.edu"
+        }
+    ],
+    "require": {}
+}
