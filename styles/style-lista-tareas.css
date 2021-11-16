@@ -1,0 +1,49 @@
+.main-section {
+    width: 100%;
+    /* height: 100%; */
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.section-card-tarea {
+    border: solid 1px rgba(0, 0, 0, 0.2);
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    border-radius: 7px;
+    width: 70%;
+    margin-bottom: 40px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+}
+.card-information {
+    margin-top: 10px;
+}
+.card-information p {
+    margin-bottom: 16px;
+    /* font-size: 15px; */
+    padding-left: 10px;
+}
+.card-title {
+    font-size: 20px;
+}
+.section-card-tarea button {
+    margin-top: 20px;
+    height: 40px;
+    width: 100px;
+    align-self: center;
+    border-radius: 4px;
+    background-color: #109177a1;
+    border: solid 1px #109177;
+    color: white;
+    font-size: 15px;
+}
+.section-card-tarea button:hover {
+    cursor: pointer;
+    font-size: 15.1px;
+    background-color: #109177ce;
+}
+.section-card-tarea button:active {
+    background-color: #109177a1;
+}

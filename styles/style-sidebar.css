@@ -2,9 +2,9 @@
    /* margin-top: 0; */
    /* border:1px rgb(83, 83, 83) solid; */
    background-color: #e8edf0;
-   width: 260px;
+   width: 280px;
    height: 100%;
-   
+   box-shadow: 2px 2px 6px #999;
 }
 .sidebar a{ 
    text-decoration: none;
@@ -26,6 +26,7 @@
    /* background-color: #d9e4eb; */
    font-weight: bold;
    margin-bottom: 10px;
+   margin-top: 10px;
 }
 
 .sidebar-list{
