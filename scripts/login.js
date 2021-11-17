@@ -4,14 +4,7 @@ var respuestaPassword = document.getElementById('respuesta-password');
 
 formulario.addEventListener('submit', function(e) {
     e.preventDefault();
-    console.log('me diste un click');
-
     var datos = new FormData(formulario);
-
-    console.log(datos);
-    console.log(datos.get('correo'));
-    console.log(datos.get('password'));
-
     fetch('../backend/iniciarSesion.php', {
         method: 'POST',
         body: datos
@@ -43,5 +36,14 @@ formulario.addEventListener('submit', function(e) {
                 </div>
                 `
             }
+            
+            if(data === 'contrasena de estudiante correcta'){
+              window.location.href = './listaConvocatorias.html';}
+              
+            if(data === 'contrasena de docente correcta'){
+                window.location.href ='./crearClase.html';}
+
+
+
         })
 });

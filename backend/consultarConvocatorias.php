@@ -35,6 +35,8 @@ $salida.='
                     </div>
                     <p class="card-description">'.$filaInvitacion['DESCRIPCION'].'</p>
                     <a target="_blank" href="../archivos/inv_publicas/'.$filaInvitacion['SEMESTRE_ANIO'].'.pdf"> ver PDF de la invitacion publica</a>
+                    <br>
+                    <hr>
                 </div>
             
         

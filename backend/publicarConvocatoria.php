@@ -27,20 +27,27 @@ $descripcion==='' || $semestre_anio==='');}
 
 function ejecutarConsultaSubirDatos($conexionBD,$fecha_inicio,$fecha_limite,$titulo_documento,$semestre_anio,$descripcion){
     $query="INSERT INTO invitacion_publica
-    (SEMESTRE_ANIO,
-    FECHA_INICIO,
-    FECHA_LIMITE,
-    NUMERO_CARNET_IDENTIDAD_DOCENTE,
-    TITULO_DOCUMENTO,
-    DESCRIPCION,
-    CODIGO) VALUES 
-    ('$semestre_anio',
-    '$fecha_inicio',
-    '$fecha_limite',
-    NULL,
+    (FECHA_INICIO ,
+    FECHA_LIMITE ,
+
+    COD_CLASE ,
+    FECHA_PUBLICACION ,
+    SEMSTRE_ANIO ,
+
+    HORA_LIMITE ,
+    TITULO_DOCUMENTO ,
+    SEMESTRE_ANIO ,
+    DESCRIPCION) 
+    VALUES 
+    ('$fecha_inicio' ,
+     '$fecha_limite' ,
+    NULL ,
+    NULL ,
+    NULL ,
+    NULL ,
     '$titulo_documento',
-    '$descripcion',
-    NULL)";
+    '$semestre_anio',
+    '$descripcion')";
     $result=mysqli_query($conexionBD,$query);
 }
 

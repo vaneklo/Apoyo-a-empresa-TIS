@@ -132,11 +132,4 @@ const subirDatos=()=>{
 formulario.addEventListener('submit',(e)=>{
 subirDatos();
 e.preventDefault();                        });
-    
-    
-    
-    
-    
-    
-    
-    
+        

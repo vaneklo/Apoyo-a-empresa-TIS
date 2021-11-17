@@ -28,18 +28,20 @@ function ejecutarConsultaSubirDatos($conexionBD,$titulo_documento,$semestre_anio
     $query="INSERT INTO pliego_especificaciones
     (SEMSTRE_ANIO,
     FECHA_PUBLICACION,
-    NUMERO_CARNET_IDENTIDAD_DOCENTE,
+
+    FECHA_INICIO,
+    FECHA_LIMITE,
+
     TITULO_DOCUMENTO,
-    DESCRIPCION,
-    CODIGO
+    DESCRIPCION
     ) VALUES 
     (
     '$semestre_anio',
     '$fecha_publicacion',
     NULL,
+    NULL,
     '$titulo_documento',
-    '$descripcion',
-    NULL)";
+    '$descripcion')";
     $result=mysqli_query($conexionBD,$query);
 }
 
